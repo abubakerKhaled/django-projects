@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home page</title>
-    {% comment %} <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon"> {% endcomment %}
-  </head>
-  <body>
-    <main>
-        <h1>Welcome to My Website</h1>  
-    </main>
-	{% comment %} <script src="index.js"></script> {% endcomment %}
-  </body>
-</html>
+{% extends 'pizzas/base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<h1>Welcome to our Pizzeria!</h1>
+<p>Discover our delicious range of pizzas, from classic favorites to unique gourmet creations.</p>
+<p>Check out our <a href="{% url 'pizzas:pizzas' %}">pizza menu</a> to see what's on offer today!</p>
+{% endblock content %}

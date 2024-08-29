@@ -1,0 +1,25 @@
+{% extends 'pizzas/base.html' %}
+
+{% block title %}Toppings for {{ pizza.name }}{% endblock title %}
+
+{% block content %}
+  <h1>Toppings for {{ pizza.name }}</h1>
+  
+  {% if toppings %}
+    <div class="toppings-list">
+      <ul>
+        {% for topping in toppings %}
+          <li>
+            {{ topping.name }}
+            {% if topping.is_vegetarian %} (Vegetarian){% endif %}
+            {% if topping.quantity %} (x{{ topping.quantity }}){% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% else %}
+    <p>No toppings available for this pizza.</p>
+  {% endif %}
+
+  <p><a href="{% url 'pizzas:pizzas' %}">Back to Pizzas</a></p>
+{% endblock content %}

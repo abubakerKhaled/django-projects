@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Blog{% endblock title %}</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #f4f4f4;
+        padding: 1rem;
+      }
+      header h1 {
+        margin: 0;
+      }
+      nav {
+        margin-top: 1rem;
+      }
+      nav a {
+        margin-right: 1rem;
+        text-decoration: none;
+        color: #333;
+      }
+      main {
+        padding: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1><a href="{% url 'blogs:home' %}" style="text-decoration: none; color: #333;">Blog</a></h1>
+      <nav>
+        <a href="{% url 'blogs:home' %}">Home</a>
+      </nav>
+    </header>
+    <main>
+      {% block content %}
+      {% endblock content %}
+    </main>
+  </body>
+</html>
